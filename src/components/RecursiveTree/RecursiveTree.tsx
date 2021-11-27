@@ -8,21 +8,25 @@ interface RecursiveTreeProps {
 }
 
 const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
-  const renderNode = (item: Tree) => {
+  const renderNode = ({ type, name, children }: Tree) => {
     return (
       <>
-        {item.type !== 'folder' && <FileNode name={item.name} />}
-        {item.type === 'folder' && item.children && (
-          <FolderNode name={item.name}>
-            <RecursiveTree nodes={item.children} />
+        {type !== 'folder' && <FileNode name={name} />}
+        {type === 'folder' && (
+          <FolderNode name={name}>
+            <RecursiveTree nodes={children ?? []} />
           </FolderNode>
         )}
       </>
     );
   };
 
+  const sortedNodes = nodes?.sort((a, b) => a.name.localeCompare(b.name));
+
   return (
-    <div className={styles.node}>{nodes?.map((node) => renderNode(node))}</div>
+    <div className={styles.node}>
+      {sortedNodes.map((node) => renderNode(node))}
+    </div>
   );
 };
 
