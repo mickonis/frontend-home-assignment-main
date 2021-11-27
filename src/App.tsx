@@ -1,8 +1,9 @@
 import RecursiveTree from 'components/RecursiveTree/RecursiveTree';
 import { useEffect, useState } from 'react';
+import { Tree } from 'types/tree';
 
-export const App = function App() {
-  const [tree, setTree] = useState<any>(null);
+export const App = () => {
+  const [tree, setTree] = useState<Tree[] | null>(null);
 
   useEffect(() => {
     getData();
@@ -14,11 +15,5 @@ export const App = function App() {
     setTree(json.response);
   };
 
-  //console.log('tree', tree);
-
-  return (
-    <div>
-      <RecursiveTree data={tree} />
-    </div>
-  );
+  return <div>{tree && <RecursiveTree data={tree} />}</div>;
 };
