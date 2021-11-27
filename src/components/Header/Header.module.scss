@@ -1,6 +1,12 @@
 .header {
+  height: 10rem;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  border: var(--element-border);
 }
 
 .title {
   font-size: var(--font-h1);
+  margin: 0;
 }
