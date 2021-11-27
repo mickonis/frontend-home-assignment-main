@@ -16,7 +16,7 @@ export const App = () => {
     const response = await fetch('http://localhost:3001/api/v1/tree');
     const json = await response.json();
     setNodes(json.response);
-    //setActiveNode(json.response[0]);
+    setActiveNode(json.response[0]);
   };
 
   return (
