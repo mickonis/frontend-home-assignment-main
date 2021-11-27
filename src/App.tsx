@@ -1,7 +1,9 @@
 import Header from 'components/Header/Header';
+import Preview from 'components/Preview/Preview';
 import Sidebar from 'components/Sidebar/Sidebar';
 import { TreeContext } from 'context/TreeState';
 import { useContext, useEffect } from 'react';
+import styles from './App.module.scss';
 
 export const App = () => {
   const { setNodes, activeNode } = useContext(TreeContext);
@@ -17,11 +19,10 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <div className={styles.app}>
       <Header />
       <Sidebar />
-
-      {activeNode?.name}
+      <Preview />
     </div>
   );
 };
