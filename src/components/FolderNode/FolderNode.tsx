@@ -1,21 +1,28 @@
 import classNames from 'classnames';
-import { useState } from 'react';
+import { TreeContext } from 'context/TreeState';
+import { ReactNode, SyntheticEvent, useContext, useState } from 'react';
+import { Tree } from 'types/tree';
 import styles from './FolderNode.module.scss';
 interface FileNodeProps {
-  name: string;
-  children: any;
+  node: Tree;
+  children: ReactNode;
 }
 
-const FolderNode = ({ name, children }: FileNodeProps) => {
+const FolderNode = ({ node, children }: FileNodeProps) => {
+  const { setActiveNode } = useContext(TreeContext);
   const [isOpen, setIsOpen] = useState(false);
+  const { name } = node;
+
+  const handleFolderClick = (event: SyntheticEvent) => {
+    event.stopPropagation();
+    setIsOpen(!isOpen);
+    setActiveNode(node);
+  };
 
   return (
     <div
       className={classNames(styles.folder, { [styles.open]: isOpen })}
-      onClick={(e) => {
-        e.stopPropagation();
-        setIsOpen(!isOpen);
-      }}
+      onClick={(event) => handleFolderClick(event)}
     >
       <div className={styles.name}>{name}</div>
       {isOpen && <>{children}</>}

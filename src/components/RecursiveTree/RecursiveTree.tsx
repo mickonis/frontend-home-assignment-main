@@ -8,13 +8,14 @@ interface RecursiveTreeProps {
 }
 
 const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
-  const renderNode = ({ type, name, children }: Tree) => {
+  const renderNode = (node: Tree) => {
+    const { type, name } = node;
     return (
       <>
         {type !== 'folder' && <FileNode name={name} />}
         {type === 'folder' && (
-          <FolderNode name={name}>
-            <RecursiveTree nodes={children ?? []} />
+          <FolderNode node={node}>
+            <RecursiveTree nodes={node.children ?? []} />
           </FolderNode>
         )}
       </>
