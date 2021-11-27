@@ -1,5 +1,5 @@
+import RecursiveTree from 'components/RecursiveTree/RecursiveTree';
 import { useEffect, useState } from 'react';
-import RecursiveTree from './components/RecursiveTree/RecursiveTree';
 
 export const App = function App() {
   const [tree, setTree] = useState<any>(null);

@@ -1,6 +1,6 @@
-import { Tree } from '../../types/tree';
-import FileNode from '../FileNode/FileNode';
-import FolderNode from '../FolderNode/FolderNode';
+import FileNode from 'components/FileNode/FileNode';
+import FolderNode from 'components/FolderNode/FolderNode';
+import { Tree } from 'types/tree';
 
 interface TreeProps {
   data: Tree[];
