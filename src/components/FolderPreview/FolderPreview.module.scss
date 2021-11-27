@@ -4,10 +4,11 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  height: fit-content;
 }
 
 .item {
-  width: 10rem;
+  width: 15rem;
   margin: 1rem;
   cursor: pointer;
 }
