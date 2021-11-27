@@ -11,7 +11,6 @@ interface FileNodeProps {
 const FolderNode = ({ node, children }: FileNodeProps) => {
   const { setActiveNode } = useContext(TreeContext);
   const [isOpen, setIsOpen] = useState(false);
-  const { name } = node;
 
   const handleFolderClick = (event: SyntheticEvent) => {
     event.stopPropagation();
@@ -24,7 +23,7 @@ const FolderNode = ({ node, children }: FileNodeProps) => {
       className={classNames(styles.folder, { [styles.open]: isOpen })}
       onClick={(event) => handleFolderClick(event)}
     >
-      <div className={styles.name}>{name}</div>
+      <div className={styles.name}>{node.name}</div>
       {isOpen && <>{children}</>}
     </div>
   );
