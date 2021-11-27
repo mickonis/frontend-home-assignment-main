@@ -13,7 +13,18 @@ export const App = function App() {
     setTree(json.response);
   };
 
-  console.log('tree', tree);
+  const renderNode = (node: any) => {
+    console.log('node', node);
 
-  return <h1>Corti Frontend Home Assignment</h1>;
+    return (
+      <div>
+        {node.name}
+        {node.type === 'folder' && renderNode(node.children)}
+      </div>
+    );
+  };
+
+  //console.log('tree', tree);
+
+  return <div>{tree?.map((node: any) => renderNode(node))}</div>;
 };
