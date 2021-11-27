@@ -1,17 +1,16 @@
 .folder {
   position: relative;
-  margin-bottom: 1rem;
   cursor: pointer;
   &:before {
     content: '';
     width: 0;
     height: 0;
-    border-top: 0.7rem solid transparent;
-    border-bottom: 0.7rem solid transparent;
-    border-left: 0.7rem solid #000;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0.5rem solid #000;
     position: absolute;
-    top: 0;
-    left: -1.5rem;
+    top: 0.9rem;
+    left: -1.3rem;
   }
 }
 
@@ -23,5 +22,8 @@
 
 .name {
   font-size: var(--font-text);
-  margin-bottom: 1rem;
+  padding: 0.6rem;
+  &:hover {
+    background: var(--node-active-color);
+  }
 }

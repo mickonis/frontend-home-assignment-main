@@ -1,5 +1,8 @@
 .name {
   font-size: var(--font-text);
-  margin-bottom: 1rem;
   cursor: pointer;
+  padding: 0.6rem;
+  &:hover {
+    background: var(--node-active-color);
+  }
 }
