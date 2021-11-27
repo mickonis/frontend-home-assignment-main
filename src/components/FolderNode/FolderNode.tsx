@@ -16,7 +16,7 @@ const FolderNode = ({ node, children }: FileNodeProps) => {
     if (activeNode?.id === node.id) {
       setIsOpen(true);
     }
-  }, [activeNode]);
+  }, [activeNode, node]);
 
   return (
     <div
