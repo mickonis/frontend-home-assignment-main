@@ -7,7 +7,7 @@ const Sidebar = () => {
   const { nodes } = useContext(TreeContext);
   return (
     <aside className={style.sidebar}>
-      {nodes && <RecursiveTree data={nodes} />}
+      {nodes && <RecursiveTree nodes={nodes} />}
     </aside>
   );
 };

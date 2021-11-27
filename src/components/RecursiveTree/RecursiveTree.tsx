@@ -4,17 +4,17 @@ import { Tree } from 'types/tree';
 import styles from './RecursiveTree.module.scss';
 
 interface RecursiveTreeProps {
-  data: Tree[];
+  nodes: Tree[];
 }
 
-const RecursiveTree = ({ data }: RecursiveTreeProps) => {
+const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
   const renderNode = (item: Tree) => {
     return (
       <>
         {item.type !== 'folder' && <FileNode name={item.name} />}
         {item.type === 'folder' && item.children && (
           <FolderNode name={item.name}>
-            <RecursiveTree data={item.children} />
+            <RecursiveTree nodes={item.children} />
           </FolderNode>
         )}
       </>
@@ -22,7 +22,7 @@ const RecursiveTree = ({ data }: RecursiveTreeProps) => {
   };
 
   return (
-    <div className={styles.node}>{data?.map((item) => renderNode(item))}</div>
+    <div className={styles.node}>{nodes?.map((node) => renderNode(node))}</div>
   );
 };
 
