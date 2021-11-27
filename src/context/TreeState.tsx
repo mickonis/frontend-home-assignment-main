@@ -5,7 +5,9 @@ import { TreeReducer } from './TreeReducer';
 
 const initialState: TreeState = {
   nodes: null,
+  activeNode: null,
   setNodes: () => {},
+  setActiveNode: () => {},
 };
 
 export const TreeContext: Context<TreeState> = createContext(initialState);
@@ -20,11 +22,20 @@ export const TreeProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const setActiveNode = (node: Tree | null) => {
+    dispatch({
+      type: 'SET_ACTIVE_NODE',
+      payload: node,
+    });
+  };
+
   return (
     <TreeContext.Provider
       value={{
         nodes: state.nodes,
+        activeNode: state.activeNode,
         setNodes,
+        setActiveNode,
       }}
     >
       {children}
