@@ -6,7 +6,7 @@ import { useContext, useEffect } from 'react';
 import styles from './App.module.scss';
 
 export const App = () => {
-  const { setNodes, activeNode } = useContext(TreeContext);
+  const { setNodes, setActiveNode } = useContext(TreeContext);
 
   useEffect(() => {
     getData();
@@ -16,6 +16,7 @@ export const App = () => {
     const response = await fetch('http://localhost:3001/api/v1/tree');
     const json = await response.json();
     setNodes(json.response);
+    //setActiveNode(json.response[0]);
   };
 
   return (

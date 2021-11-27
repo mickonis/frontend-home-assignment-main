@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import { ReactNode, useState } from 'react';
+import { TreeContext } from 'context/TreeState';
+import { ReactNode, useContext, useEffect, useState } from 'react';
 import { Tree } from 'types/tree';
 import styles from './FolderNode.module.scss';
 interface FileNodeProps {
@@ -9,6 +10,13 @@ interface FileNodeProps {
 
 const FolderNode = ({ node, children }: FileNodeProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { activeNode } = useContext(TreeContext);
+
+  useEffect(() => {
+    if (activeNode?.id === node.id) {
+      setIsOpen(true);
+    }
+  }, [activeNode]);
 
   return (
     <div
