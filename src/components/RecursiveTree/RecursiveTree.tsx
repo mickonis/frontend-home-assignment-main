@@ -1,6 +1,7 @@
 import FileNode from 'components/FileNode/FileNode';
 import FolderNode from 'components/FolderNode/FolderNode';
 import { Tree } from 'types/tree';
+import styles from './RecursiveTree.module.scss';
 
 interface RecursiveTreeProps {
   data: Tree[];
@@ -20,7 +21,9 @@ const RecursiveTree = ({ data }: RecursiveTreeProps) => {
     );
   };
 
-  return <div className="node">{data?.map((item) => renderNode(item))}</div>;
+  return (
+    <div className={styles.node}>{data?.map((item) => renderNode(item))}</div>
+  );
 };
 
 export default RecursiveTree;
