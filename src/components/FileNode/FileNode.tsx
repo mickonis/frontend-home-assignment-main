@@ -5,7 +5,7 @@ interface FileNodeProps {
 }
 
 const FileNode = ({ name }: FileNodeProps) => (
-  <div className={styles.name}>{name}</div>
+  <div className={styles.file}>{name}</div>
 );
 
 export default FileNode;

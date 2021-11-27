@@ -9,6 +9,7 @@ interface FolderPreviewProps {
 
 const FolderPreview = ({ nodes }: FolderPreviewProps) => {
   const { setActiveNode } = useContext(TreeContext);
+
   const renderNodePreview = (node: Tree) => {
     const { type, name } = node;
     return (
@@ -21,6 +22,7 @@ const FolderPreview = ({ nodes }: FolderPreviewProps) => {
       </li>
     );
   };
+
   return (
     <ul className={styles.list}>
       {nodes.map((node) => renderNodePreview(node))}
