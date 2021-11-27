@@ -1,3 +1,4 @@
+import Header from 'components/Header/Header';
 import RecursiveTree from 'components/RecursiveTree/RecursiveTree';
 import { useEffect, useState } from 'react';
 import { Tree } from 'types/tree';
@@ -15,5 +16,10 @@ export const App = () => {
     setTree(json.response);
   };
 
-  return <div>{tree && <RecursiveTree data={tree} />}</div>;
+  return (
+    <div>
+      <Header />
+      {tree && <RecursiveTree data={tree} />}
+    </div>
+  );
 };
