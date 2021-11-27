@@ -4,7 +4,7 @@ import { TreeContext } from 'context/TreeState';
 import { useContext, useEffect } from 'react';
 
 export const App = () => {
-  const { setNodes } = useContext(TreeContext);
+  const { setNodes, activeNode } = useContext(TreeContext);
 
   useEffect(() => {
     getData();
@@ -20,6 +20,8 @@ export const App = () => {
     <div>
       <Header />
       <Sidebar />
+
+      {activeNode?.name}
     </div>
   );
 };
