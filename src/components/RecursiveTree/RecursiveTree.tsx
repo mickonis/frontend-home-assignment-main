@@ -7,8 +7,6 @@ interface RecursiveTreeProps {
 }
 
 const RecursiveTree = ({ data }: RecursiveTreeProps) => {
-  // loop through the data
-
   const renderNode = (item: Tree) => {
     return (
       <>
@@ -22,7 +20,7 @@ const RecursiveTree = ({ data }: RecursiveTreeProps) => {
     );
   };
 
-  return <div className="node">{data.map((item) => renderNode(item))}</div>;
+  return <div className="node">{data?.map((item) => renderNode(item))}</div>;
 };
 
 export default RecursiveTree;

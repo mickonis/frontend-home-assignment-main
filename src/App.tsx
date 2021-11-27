@@ -1,11 +1,10 @@
 import Header from 'components/Header/Header';
-import RecursiveTree from 'components/RecursiveTree/RecursiveTree';
 import Sidebar from 'components/Sidebar/Sidebar';
-import { useEffect, useState } from 'react';
-import { Tree } from 'types/tree';
+import { TreeContext } from 'context/TreeState';
+import { useContext, useEffect } from 'react';
 
 export const App = () => {
-  const [tree, setTree] = useState<Tree[] | null>(null);
+  const { setNodes } = useContext(TreeContext);
 
   useEffect(() => {
     getData();
@@ -14,14 +13,13 @@ export const App = () => {
   const getData = async () => {
     const response = await fetch('http://localhost:3001/api/v1/tree');
     const json = await response.json();
-    setTree(json.response);
+    setNodes(json.response);
   };
 
   return (
     <div>
       <Header />
       <Sidebar />
-      {tree && <RecursiveTree data={tree} />}
     </div>
   );
 };
