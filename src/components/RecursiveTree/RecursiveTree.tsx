@@ -2,29 +2,27 @@ import FileNode from 'components/FileNode/FileNode';
 import FolderNode from 'components/FolderNode/FolderNode';
 import { Tree } from 'types/tree';
 
-interface TreeProps {
+interface RecursiveTreeProps {
   data: Tree[];
 }
 
-const RecursiveTree = ({ data }: TreeProps): any => {
+const RecursiveTree = ({ data }: RecursiveTreeProps) => {
   // loop through the data
-  if (data?.length > 0) {
-    return data.map((item) => {
-      if (item.type !== 'folder') {
-        return <FileNode name={item.name} />;
-      }
 
-      if (item.type === 'folder' && item.children) {
-        return (
+  const renderNode = (item: Tree) => {
+    return (
+      <>
+        {item.type !== 'folder' && <FileNode name={item.name} />}
+        {item.type === 'folder' && item.children && (
           <FolderNode name={item.name}>
             <RecursiveTree data={item.children} />
           </FolderNode>
-        );
-      }
-    });
-  } else {
-    return <div>EMPTY</div>;
-  }
+        )}
+      </>
+    );
+  };
+
+  return <div className="node">{data.map((item) => renderNode(item))}</div>;
 };
 
 export default RecursiveTree;
