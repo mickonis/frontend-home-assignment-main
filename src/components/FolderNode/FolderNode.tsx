@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useState } from 'react';
 import styles from './FolderNode.module.scss';
 interface FileNodeProps {
@@ -7,10 +8,17 @@ interface FileNodeProps {
 
 const FolderNode = ({ name, children }: FileNodeProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className={styles.folder} onClick={() => setIsOpen(!isOpen)}>
+    <div
+      className={classNames(styles.folder, { [styles.open]: isOpen })}
+      onClick={(e) => {
+        e.stopPropagation();
+        setIsOpen(!isOpen);
+      }}
+    >
       <div className={styles.name}>{name}</div>
-      {isOpen && <div>{children}</div>}
+      {isOpen && <>{children}</>}
     </div>
   );
 };
