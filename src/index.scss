@@ -14,6 +14,7 @@ body {
   //typography
   --font-unit: 1.6rem;
   --font-h1: calc(1.5 * var(--font-unit)); // 24px
+  --font-h2: calc(1.25 * var(--font-unit)); // 20px
   --font-text: calc(1 * var(--font-unit)); // 16px
   //colors
   --text-color: #000;

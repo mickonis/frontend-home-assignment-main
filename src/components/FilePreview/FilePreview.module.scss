@@ -1,0 +1,16 @@
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: var(--font-h2);
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: var(--font-text);
+  margin: 0;
+  margin-bottom: 1rem;
+}
