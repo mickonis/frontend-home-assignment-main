@@ -1,5 +1,6 @@
 import Header from 'components/Header/Header';
 import RecursiveTree from 'components/RecursiveTree/RecursiveTree';
+import Sidebar from 'components/Sidebar/Sidebar';
 import { useEffect, useState } from 'react';
 import { Tree } from 'types/tree';
 
@@ -19,6 +20,7 @@ export const App = () => {
   return (
     <div>
       <Header />
+      <Sidebar />
       {tree && <RecursiveTree data={tree} />}
     </div>
   );
