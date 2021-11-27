@@ -16,9 +16,12 @@ body {
   --font-h1: calc(1.5 * var(--font-unit)); // 24px
   --font-h2: calc(1.25 * var(--font-unit)); // 20px
   --font-text: calc(1 * var(--font-unit)); // 16px
+  --font-big-text: calc(2 * var(--font-unit)); // 16px
   //colors
   --text-color: #000;
-  --element-border: 0.2rem solid #000;
+  --folder-color: #575757;
   //sizes
   --header-height: 10rem;
+  //misc
+  --element-border: 0.2rem solid #000;
 }

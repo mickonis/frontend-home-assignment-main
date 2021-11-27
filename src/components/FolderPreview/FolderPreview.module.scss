@@ -1,0 +1,34 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 10rem;
+}
+
+.folder {
+  width: 100%;
+  height: 10rem;
+
+  background: var(--folder-color);
+}
+
+.file {
+  width: 100%;
+  height: 10rem;
+  font-size: var(--font-big-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-size: var(--font-text);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
