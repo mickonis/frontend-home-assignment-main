@@ -1,9 +1,10 @@
 .header {
-  height: 10rem;
+  height: var(--header-height);
   padding: 0 3rem;
   display: flex;
   align-items: center;
   border: var(--element-border);
+  box-sizing: border-box;
 }
 
 .title {

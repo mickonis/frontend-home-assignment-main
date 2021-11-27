@@ -1,18 +1,21 @@
 .folder {
   position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
   &:before {
     content: '';
     width: 0;
     height: 0;
-    border-top: 1rem solid transparent;
-    border-bottom: 1rem solid transparent;
-    border-left: 1rem solid #000;
+    border-top: 0.7rem solid transparent;
+    border-bottom: 0.7rem solid transparent;
+    border-left: 0.7rem solid #000;
     position: absolute;
     top: 0;
-    left: -15px;
+    left: -1.5rem;
   }
 }
 
 .name {
   font-size: var(--font-text);
+  margin-bottom: 1rem;
 }

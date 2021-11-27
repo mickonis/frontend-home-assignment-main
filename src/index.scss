@@ -7,6 +7,7 @@ body {
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  //padding: 1rem;
 }
 
 :root {
@@ -17,4 +18,6 @@ body {
   //colors
   --text-color: #000;
   --element-border: 0.2rem solid #000;
+  //sizes
+  --header-height: 10rem;
 }
