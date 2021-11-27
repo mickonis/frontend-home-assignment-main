@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import RecursiveTree from './components/RecursiveTree/RecursiveTree';
 
 export const App = function App() {
   const [tree, setTree] = useState<any>(null);
@@ -13,18 +14,11 @@ export const App = function App() {
     setTree(json.response);
   };
 
-  const renderNode = (node: any) => {
-    console.log('node', node);
-
-    return (
-      <div>
-        {node.name}
-        {node.type === 'folder' && renderNode(node.children)}
-      </div>
-    );
-  };
-
   //console.log('tree', tree);
 
-  return <div>{tree?.map((node: any) => renderNode(node))}</div>;
+  return (
+    <div>
+      <RecursiveTree data={tree} />
+    </div>
+  );
 };

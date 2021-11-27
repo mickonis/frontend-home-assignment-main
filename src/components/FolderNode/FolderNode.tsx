@@ -1,8 +1,8 @@
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 
 interface FileNodeProps {
   name: string;
-  children: ReactNode;
+  children: any;
 }
 
 const FolderNode = ({ name, children }: FileNodeProps) => {
