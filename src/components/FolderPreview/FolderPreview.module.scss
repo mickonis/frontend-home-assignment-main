@@ -9,8 +9,11 @@
 
 .item {
   width: 15rem;
-  margin: 1rem;
+  padding: 1rem;
   cursor: pointer;
+  &:hover {
+    background: var(--node-active-color);
+  }
 }
 
 .folder {
