@@ -1,3 +1,4 @@
+import { getTree } from 'api/tree';
 import Header from 'components/Header/Header';
 import Preview from 'components/Preview/Preview';
 import Sidebar from 'components/Sidebar/Sidebar';
@@ -9,14 +10,13 @@ export const App = () => {
   const { setNodes, setActiveNode } = useContext(TreeContext);
 
   useEffect(() => {
-    getData();
+    prepareApp();
   }, []);
 
-  const getData = async () => {
-    const response = await fetch('http://localhost:3001/api/v1/tree');
-    const json = await response.json();
-    setNodes(json.response);
-    setActiveNode(json.response[0]);
+  const prepareApp = async () => {
+    const { response } = await (await getTree()).json();
+    setNodes(response);
+    setActiveNode(response[0]);
   };
 
   return (
