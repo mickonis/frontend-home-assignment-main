@@ -1,15 +1,15 @@
-import { Tree } from './tree';
+import { Node } from './tree';
 
 export interface TreeState {
-  nodes: Tree[] | null;
-  activeNode: Tree | null;
-  setNodes: (nodes: Tree[]) => void;
-  setActiveNode: (node: Tree) => void;
+  nodes: Node[] | null;
+  activeNode: Node | null;
+  setNodes: (nodes: Node[]) => void;
+  setActiveNode: (node: Node) => void;
 }
 
 export interface TreeAction {
   type: TreeActionType;
-  payload: Tree[] | Tree | null;
+  payload: Node[] | Node | null;
 }
 
 export type TreeActionType = 'SET_NODES' | 'SET_ACTIVE_NODE';

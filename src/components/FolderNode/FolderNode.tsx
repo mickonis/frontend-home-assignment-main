@@ -1,10 +1,11 @@
 import classNames from 'classnames';
 import { TreeContext } from 'context/TreeState';
 import { ReactNode, useContext, useEffect, useState } from 'react';
-import { Tree } from 'types/tree';
+import { Node } from 'types/tree';
 import styles from './FolderNode.module.scss';
+
 interface FileNodeProps {
-  node: Tree;
+  node: Node;
   children: ReactNode;
 }
 

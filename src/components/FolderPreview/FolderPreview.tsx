@@ -1,16 +1,16 @@
 import { TreeContext } from 'context/TreeState';
 import { useContext } from 'react';
-import { Tree } from 'types/tree';
+import { Node } from 'types/tree';
 import styles from './FolderPreview.module.scss';
 
 interface FolderPreviewProps {
-  nodes: Tree[];
+  nodes: Node[];
 }
 
 const FolderPreview = ({ nodes }: FolderPreviewProps) => {
   const { setActiveNode } = useContext(TreeContext);
 
-  const renderNodePreview = (node: Tree) => {
+  const renderNodePreview = (node: Node) => {
     const { type, name } = node;
     return (
       <li className={styles.item} onClick={() => setActiveNode(node)}>

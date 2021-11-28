@@ -1,4 +1,4 @@
-import { Tree } from 'types/tree';
+import { Node } from 'types/tree';
 import { TreeAction, TreeState } from 'types/treeState';
 
 export const TreeReducer = (
@@ -9,13 +9,13 @@ export const TreeReducer = (
     case 'SET_NODES':
       return {
         ...state,
-        nodes: action.payload as Tree[],
+        nodes: action.payload as Node[],
       };
 
     case 'SET_ACTIVE_NODE':
       return {
         ...state,
-        activeNode: action.payload as Tree | null,
+        activeNode: action.payload as Node | null,
       };
 
     default:

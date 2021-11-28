@@ -1,8 +1,8 @@
-export interface Tree {
+export interface Node {
   id: 'string';
   type: NodeType;
   name: 'string';
-  children?: Tree[];
+  children?: Node[];
 }
 
 export type NodeType = 'image' | 'doc' | 'folder';

@@ -2,16 +2,16 @@ import FileNode from 'components/FileNode/FileNode';
 import FolderNode from 'components/FolderNode/FolderNode';
 import { TreeContext } from 'context/TreeState';
 import { useContext } from 'react';
-import { Tree } from 'types/tree';
+import { Node } from 'types/tree';
 import styles from './RecursiveTree.module.scss';
 
 interface RecursiveTreeProps {
-  nodes: Tree[];
+  nodes: Node[];
 }
 
 const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
   const { setActiveNode } = useContext(TreeContext);
-  const renderNode = (node: Tree) => {
+  const renderNode = (node: Node) => {
     const { type, name } = node;
 
     return (
