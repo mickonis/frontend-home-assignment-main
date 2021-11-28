@@ -7,7 +7,7 @@ interface FilePreviewProps {
 }
 
 const FilePreview = ({ name, type }: FilePreviewProps) => (
-  <div className={styles.wrap}>
+  <div className={styles.wrap} data-testid="file-preview">
     <h2 className={styles.title}>Preview</h2>
     <p className={styles.text}>name: {name}</p>
     <p className={styles.text}>type: {type}</p>

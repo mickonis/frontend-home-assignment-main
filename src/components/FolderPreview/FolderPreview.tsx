@@ -33,7 +33,7 @@ const FolderPreview = ({ nodes = [] }: FolderPreviewProps) => {
   };
 
   return (
-    <ul className={styles.list}>
+    <ul className={styles.list} data-testid="folder-preview">
       {nodes.map((node) => renderNodePreview(node))}
     </ul>
   );
