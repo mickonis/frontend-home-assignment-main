@@ -14,9 +14,7 @@ const FolderNode = ({ node, children }: FileNodeProps) => {
   const { activeNode } = useContext(TreeContext);
 
   useEffect(() => {
-    if (activeNode?.id === node.id) {
-      setIsOpen(true);
-    }
+    activeNode?.id === node.id && setIsOpen(true);
   }, [activeNode, node]);
 
   return (
