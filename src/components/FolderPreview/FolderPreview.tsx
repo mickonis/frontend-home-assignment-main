@@ -19,14 +19,13 @@ const FolderPreview = ({ nodes = [] }: FolderPreviewProps) => {
         className={styles.item}
         onClick={() => setActiveNode(node)}
       >
-        {isFolder(type) && (
+        {isFolder(type) ? (
           <div
             onClick={() => setExpandedNodeIds(node.id)}
             className={styles.folder}
             data-testid="folder-icon"
           />
-        )}
-        {!isFolder(type) && (
+        ) : (
           <div className={styles.file} data-testid="file-icon">
             {name.charAt(0)}
           </div>
