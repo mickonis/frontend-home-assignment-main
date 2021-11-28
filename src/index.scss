@@ -7,7 +7,6 @@ body {
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  //padding: 1rem;
 }
 
 :root {
@@ -16,7 +15,7 @@ body {
   --font-h1: calc(1.5 * var(--font-unit)); // 24px
   --font-h2: calc(1.25 * var(--font-unit)); // 20px
   --font-text: calc(1 * var(--font-unit)); // 16px
-  --font-big-text: calc(2 * var(--font-unit)); // 16px
+  --font-big-text: calc(2 * var(--font-unit)); // 32px
   //colors
   --text-color: #000;
   --folder-color: #575757;

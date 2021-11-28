@@ -1,18 +1,20 @@
 import FileNode from 'components/FileNode/FileNode';
 import FolderNode from 'components/FolderNode/FolderNode';
 import { TreeContext } from 'context/TreeState';
+import { isFolder, sortNodes } from 'helpers/tree';
 import { useContext } from 'react';
 import { Node } from 'types/tree';
 import styles from './RecursiveTree.module.scss';
 
 interface RecursiveTreeProps {
-  nodes: Node[];
+  nodes?: Node[];
 }
 
 const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
   const { setActiveNode } = useContext(TreeContext);
+
   const renderNode = (node: Node) => {
-    const { type, name } = node;
+    const { type, name, children } = node;
 
     return (
       <div
@@ -21,21 +23,20 @@ const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
           setActiveNode(node);
         }}
       >
-        {type !== 'folder' && <FileNode name={name} />}
-        {type === 'folder' && (
+        {isFolder(type) ? (
           <FolderNode node={node}>
-            <RecursiveTree nodes={node.children ?? []} />
+            <RecursiveTree nodes={children} />
           </FolderNode>
+        ) : (
+          <FileNode name={name} />
         )}
       </div>
     );
   };
 
-  const sortedNodes = nodes?.sort((a, b) => a.name.localeCompare(b.name));
-
   return (
     <div className={styles.node}>
-      {sortedNodes.map((node) => renderNode(node))}
+      {nodes?.sort(sortNodes).map((node) => renderNode(node))}
     </div>
   );
 };

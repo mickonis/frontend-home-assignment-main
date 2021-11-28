@@ -5,6 +5,7 @@ import style from './Sidebar.module.scss';
 
 const Sidebar = () => {
   const { nodes } = useContext(TreeContext);
+
   return (
     <aside className={style.sidebar}>
       {nodes && <RecursiveTree nodes={nodes} />}
