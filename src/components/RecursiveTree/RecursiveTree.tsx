@@ -14,7 +14,7 @@ const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
   const { setActiveNode } = useContext(TreeContext);
 
   const renderNode = (node: Node) => {
-    const { type, name, children } = node;
+    const { type, name, children, id } = node;
 
     return (
       <div
@@ -28,7 +28,7 @@ const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
             <RecursiveTree nodes={children} />
           </FolderNode>
         ) : (
-          <FileNode name={name} />
+          <FileNode name={name} id={id} />
         )}
       </div>
     );
