@@ -7,7 +7,7 @@ import { useContext, useEffect } from 'react';
 import styles from './App.module.scss';
 
 export const App = () => {
-  const { setNodes, setActiveNode } = useContext(TreeContext);
+  const { setNodes } = useContext(TreeContext);
 
   useEffect(() => {
     prepareApp();
@@ -16,7 +16,6 @@ export const App = () => {
   const prepareApp = async () => {
     const { response } = await (await getTree()).json();
     setNodes(response);
-    setActiveNode(response[0]);
   };
 
   return (
