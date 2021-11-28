@@ -18,6 +18,7 @@ const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
 
     return (
       <div
+        className={styles.node}
         onClick={(event) => {
           event.stopPropagation();
           setActiveNode(node);
@@ -35,7 +36,7 @@ const RecursiveTree = ({ nodes }: RecursiveTreeProps) => {
   };
 
   return (
-    <div className={styles.node}>
+    <div className={styles.tree}>
       {nodes?.sort(sortNodes).map((node) => renderNode(node))}
     </div>
   );
