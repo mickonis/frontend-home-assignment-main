@@ -9,7 +9,7 @@ interface FolderPreviewProps {
 }
 
 const FolderPreview = ({ nodes = [] }: FolderPreviewProps) => {
-  const { setActiveNode } = useContext(TreeContext);
+  const { setActiveNode, setExpandedNodeIds } = useContext(TreeContext);
 
   const renderNodePreview = (node: Node) => {
     const { type, name } = node;
@@ -20,7 +20,11 @@ const FolderPreview = ({ nodes = [] }: FolderPreviewProps) => {
         onClick={() => setActiveNode(node)}
       >
         {isFolder(type) && (
-          <div className={styles.folder} data-testid="folder-icon" />
+          <div
+            onClick={() => setExpandedNodeIds(node.id)}
+            className={styles.folder}
+            data-testid="folder-icon"
+          />
         )}
         {!isFolder(type) && (
           <div className={styles.file} data-testid="file-icon">

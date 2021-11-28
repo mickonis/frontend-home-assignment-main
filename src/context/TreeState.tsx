@@ -6,8 +6,10 @@ import { TreeReducer } from './TreeReducer';
 const initialState: TreeState = {
   nodes: null,
   activeNode: null,
+  expandedNodeIds: [],
   setNodes: () => {},
   setActiveNode: () => {},
+  setExpandedNodeIds: () => {},
 };
 
 export const TreeContext: Context<TreeState> = createContext(initialState);
@@ -29,13 +31,22 @@ export const TreeProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const setExpandedNodeIds = (id: string) => {
+    dispatch({
+      type: 'SET_EXPANDED_NODE_IDS',
+      payload: id,
+    });
+  };
+
   return (
     <TreeContext.Provider
       value={{
         nodes: state.nodes,
         activeNode: state.activeNode,
+        expandedNodeIds: state.expandedNodeIds,
         setNodes,
         setActiveNode,
+        setExpandedNodeIds,
       }}
     >
       {children}
