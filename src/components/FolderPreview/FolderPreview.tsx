@@ -14,9 +14,19 @@ const FolderPreview = ({ nodes = [] }: FolderPreviewProps) => {
   const renderNodePreview = (node: Node) => {
     const { type, name } = node;
     return (
-      <li className={styles.item} onClick={() => setActiveNode(node)}>
-        {isFolder(type) && <div className={styles.folder} />}
-        {!isFolder(type) && <div className={styles.file}>{name.charAt(0)}</div>}
+      <li
+        key={node.id}
+        className={styles.item}
+        onClick={() => setActiveNode(node)}
+      >
+        {isFolder(type) && (
+          <div className={styles.folder} data-testid="folder-icon" />
+        )}
+        {!isFolder(type) && (
+          <div className={styles.file} data-testid="file-icon">
+            {name.charAt(0)}
+          </div>
+        )}
         <div className={styles.name}>{name}</div>
       </li>
     );

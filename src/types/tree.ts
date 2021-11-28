@@ -1,7 +1,7 @@
 export interface Node {
-  id: 'string';
+  id: string;
   type: NodeType;
-  name: 'string';
+  name: string;
   children?: Node[];
 }
 
