@@ -83,4 +83,22 @@ Api will be available from your client on the same port on `/api/v1/tree`
 
 ## Your notes
 
-...
+### Comment
+
+It took me ~ 5h to code this task.
+
+I have implemented the core recursive tree functionality pretty fast but I took extra time on styling and refactoring the code to ship a clean solution.
+
+The task itself was pretty fun to code because it was not too difficult and the requirements were clear. I think this task is balanced pretty well for a home assignment.
+
+Improvement ideas: it would be nice to remove 1 requirement and add a more in-depth design (maybe Figma or Sketch) to check candidates ability to use CSS properly.
+
+### Key points:
+
+- [x] Using TypeScript
+- [x] Using ES6
+- [x] Using React hooks
+- [x] Using React context
+- [x] Using CSS modules
+- [x] Using CSS :root variables
+- [x] Added few tests
