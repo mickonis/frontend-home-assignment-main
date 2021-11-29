@@ -1,3 +1,25 @@
+## Your notes
+
+### Comment
+
+It took me ~ 5h to code this task.
+
+I have implemented the core recursive tree functionality pretty fast but I took extra time on styling and refactoring the code to ship a clean solution.
+
+The task itself was pretty fun to code because it was not too difficult and the requirements were clear. I think this task is balanced pretty well for a home assignment.
+
+Improvement ideas: it would be nice to remove 1 requirement and add a more in-depth design (maybe Figma or Sketch) to check candidates ability to use CSS properly.
+
+### Key points:
+
+- [x] Using TypeScript
+- [x] Using ES6
+- [x] Using React hooks
+- [x] Using React context
+- [x] Using CSS modules
+- [x] Using CSS :root variables
+- [x] Added few tests
+
 # Corti Frontend Home Assignment
 
 Take all the time that you need to complete the assignment. We expect to see all the user stories fulfilled. Although there is no strict maximum, we do not expect you to spend more than 1 day on this.
@@ -80,25 +102,3 @@ Api will be available from your client on the same port on `/api/v1/tree`
 1. We appreciate if you give us some feedback on this assignment in this README file below. Is the task too difficult/easy? Is it easy to understand what's asked for you to do? Is the scope of the task too big? Any feedback is welcome.
 
 1. Upload this project to a public or private github repository. If repo is private, do not forget to invite the list of people that are mentioned in the email you received. **IMPORTANT Don't forget to add a number of hours it took you to complete it!**
-
-## Your notes
-
-### Comment
-
-It took me ~ 5h to code this task.
-
-I have implemented the core recursive tree functionality pretty fast but I took extra time on styling and refactoring the code to ship a clean solution.
-
-The task itself was pretty fun to code because it was not too difficult and the requirements were clear. I think this task is balanced pretty well for a home assignment.
-
-Improvement ideas: it would be nice to remove 1 requirement and add a more in-depth design (maybe Figma or Sketch) to check candidates ability to use CSS properly.
-
-### Key points:
-
-- [x] Using TypeScript
-- [x] Using ES6
-- [x] Using React hooks
-- [x] Using React context
-- [x] Using CSS modules
-- [x] Using CSS :root variables
-- [x] Added few tests
