@@ -1,3 +1,7 @@
+# Corti Frontend Home Assignment
+
+Take all the time that you need to complete the assignment. We expect to see all the user stories fulfilled. Although there is no strict maximum, we do not expect you to spend more than 1 day on this.
+
 ## Your notes
 
 ### Comment
@@ -19,10 +23,6 @@ Improvement ideas: it would be nice to remove 1 requirement and add a more in-de
 - [x] Using CSS modules
 - [x] Using CSS :root variables
 - [x] Added few tests
-
-# Corti Frontend Home Assignment
-
-Take all the time that you need to complete the assignment. We expect to see all the user stories fulfilled. Although there is no strict maximum, we do not expect you to spend more than 1 day on this.
 
 ## Task - Directory Browser
 
