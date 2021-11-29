@@ -2,6 +2,12 @@
   "name": "frontend-home-assignment",
   "version": "2.0.0",
   "private": true,
+  "contributors": [
+    {
+      "name": "Laurynas Mickonis",
+      "email": "mickonis.l@gmail.com"
+    }
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
